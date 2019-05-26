@@ -1,0 +1,35 @@
+schema {
+    query: Query
+}
+
+type Query {
+    allUsers: [User]
+    allPosts: [Post]
+    user(userName: String): User
+    post(id: String): Post
+}
+
+type User {
+    id: String
+    userName: String
+    firstName: String
+    lastName: String
+    posts: [Post]
+}
+
+type Post {
+    id: String
+    title: String
+    text: String
+    author: User
+    comments: [Comment]
+}
+
+type Comment {
+    id: String
+    text: String
+    author: User
+}
+
+
+
